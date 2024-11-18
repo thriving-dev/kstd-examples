@@ -39,7 +39,16 @@
         "type": "enum",
         "name": "FlightClass",
         "symbols": ["ECONOMY", "BUSINESS", "FIRST"],
-        "doc": "The flight class (economy, business, first)."
+        "doc": "The flight class."
+      }
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "BookingStatus",
+        "symbols": ["BOOKED", "CHECKED_IN", "CANCELLED_BY_USER", "CANCELLED_BY_AIRLINE"],
+        "doc": "The user flight booking status."
       }
     },
     {

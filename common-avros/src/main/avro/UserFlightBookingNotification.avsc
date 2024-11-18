@@ -39,7 +39,7 @@
         "type": "enum",
         "name": "FlightClass",
         "symbols": ["ECONOMY", "BUSINESS", "FIRST"],
-        "doc": "The flight class (economy, business, first)."
+        "doc": "The flight class."
       }
     },
     {

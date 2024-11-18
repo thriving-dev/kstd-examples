@@ -7,9 +7,6 @@ import io.micronaut.context.annotation.Factory;
 import jakarta.inject.Singleton;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
-import org.apache.kafka.streams.StreamsBuilder;
-import org.apache.kafka.streams.Topology;
-import org.apache.kafka.streams.TopologyDescription;
 import org.apache.kafka.streams.kstream.*;
 import org.apache.kafka.streams.processor.api.ContextualProcessor;
 import org.apache.kafka.streams.processor.api.ProcessorSupplier;
@@ -23,6 +20,7 @@ import java.util.Map;
 public class KStreamsTopologyFactory {
 
     private static final String SOURCE_TOPIC_USER_FLIGHT_BOOKING = "user_flight_booking_v3";
+    private static final String SOURCE_TOPIC_FLIGHT = "flight_v2";
     private static final String SOURCE_TOPIC_AIRPORT_INFO_I18N = "airport_info_i18n_v5";
     private static final String SOURCE_TOPIC_FLIGHT_STATUS_UPDATE = "flight_status_update_v1";
     private static final String SINK_TOPIC_USER_FLIGHT_BOOKING_NOTIFICATION = "user_flight_booking_notification_v1";
@@ -38,15 +36,21 @@ public class KStreamsTopologyFactory {
         SpecificAvroSerde<UserFlightBooking> userFlightBookingSerde = new SpecificAvroSerde<>();
         userFlightBookingSerde.configure(serdeConfig, false);
 
+        // custom state stores
         builder.addStateStore(Stores.keyValueStoreBuilder(
                 Stores.persistentKeyValueStore(STATE_STORE_FLIGHT_BOOKINGS),
                 stringSerde,
                 userFlightBookingSerde
         ));
 
+        // sources
         KStream<String, UserFlightBooking> bookings = builder.stream(
                 SOURCE_TOPIC_USER_FLIGHT_BOOKING,
                 Consumed.as("flight-booking-source"));
+
+        KStream<String, Flight> flights = builder.stream(
+                SOURCE_TOPIC_FLIGHT,
+                Consumed.as("flight-source"));
 
         GlobalKTable<String, AirportInfoI18n> airportInfo = builder.globalTable(
                 SOURCE_TOPIC_AIRPORT_INFO_I18N,
@@ -57,21 +61,42 @@ public class KStreamsTopologyFactory {
                 SOURCE_TOPIC_FLIGHT_STATUS_UPDATE,
                 Consumed.as("status-update-source"));
 
-        KStream<String, UserFlightBookingEnriched> bookingsEnriched = bookings
-                .process(supplier2(), Named.as("airport-enrichment-processor"));
-
-        bookingsEnriched.repartition(Repartitioned
-                        .<String, UserFlightBookingEnriched>as("bookings-enriched-internal")
-                        .withNumberOfPartitions(12))
-                .process(supplier3(), Named.as("flight-booking-processor"), STATE_STORE_FLIGHT_BOOKINGS);
-
-        KStream<String, UserFlightBookingNotification> notifications = flightStatusUpdates
+        // topology
+        KStream<String, Flight> passengerFlightsRepartitioned = flights
                 .filter((k, v) -> true, Named.as("passenger-flight-filter"))
-                .process(supplier(), Named.as("booking-notification-processor"), STATE_STORE_FLIGHT_BOOKINGS);
+                .repartition(Repartitioned.<String, Flight>as("passenger-flights-repartitioned").withNumberOfPartitions(12));
 
+        KTable<String, FlightEnriched> flightsEnriched = passengerFlightsRepartitioned
+                .process(supplier4(), Named.as("airport-enrichment-processor"))
+                .toTable(Named.as("flights-enriched-table"));
+
+        KStream<String, UserFlightBookingEnriched> bookingsEnriched = bookings
+                .selectKey((k, v) -> v.getDepartureDate() + "_" + v.getFlightNumber())
+                .join(flightsEnriched, (k, v1, v2) -> UserFlightBookingEnriched.newBuilder().build(), Joined.as("bookings-to-flights-join"));
+
+        KStream<String, UserFlightBookingNotification> notifications = bookingsEnriched
+                .process(supplier3(), Named.as("flight-booking-processor"), STATE_STORE_FLIGHT_BOOKINGS)
+                .merge(flightStatusUpdates
+                        .process(supplier(), Named.as("booking-notification-processor"), STATE_STORE_FLIGHT_BOOKINGS));
+
+        // sink
         notifications.to(SINK_TOPIC_USER_FLIGHT_BOOKING_NOTIFICATION, Produced.as("user-notification-sink"));
 
+        // (return any KStream for micronaut-kafka)
         return notifications;
+    }
+
+    private static ValueJoinerWithKey<String, UserFlightBooking, FlightEnriched, UserFlightBookingEnriched> joiner1() {
+        return (k, v1, v2) -> UserFlightBookingEnriched.newBuilder().build();
+    }
+
+    private ProcessorSupplier<String, Flight, String, FlightEnriched> supplier4() {
+        return () -> new ContextualProcessor<>() {
+            @Override
+            public void process(Record<String, Flight> record) {
+                System.out.println("supplier");
+            }
+        };
     }
 
     private ProcessorSupplier<? super String, ? super FlightStatusUpdate, String, UserFlightBookingNotification> supplier() {
@@ -83,7 +108,6 @@ public class KStreamsTopologyFactory {
         };
     }
 
-
     private ProcessorSupplier<? super String, ? super UserFlightBooking, String, UserFlightBookingEnriched> supplier2() {
         return () -> new ContextualProcessor<>() {
             @Override
@@ -93,7 +117,7 @@ public class KStreamsTopologyFactory {
         };
     }
 
-    private ProcessorSupplier<? super String, ? super UserFlightBookingEnriched, Object, Object> supplier3() {
+    private ProcessorSupplier<String, UserFlightBookingEnriched, String, UserFlightBookingNotification> supplier3() {
         return () -> new ContextualProcessor<>() {
             @Override
             public void process(Record<String, UserFlightBookingEnriched> record) {
@@ -101,14 +125,5 @@ public class KStreamsTopologyFactory {
             }
         };
     }
-    @Singleton
-    public Topology topology(StreamsBuilder streamsBuilder) {
-        return streamsBuilder.build();
-    }
 
-    @Singleton
-    public String topologyDescription(Topology topology) {
-        TopologyDescription description = topology.describe();
-        return description.toString();
-    }
 }

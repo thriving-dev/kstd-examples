@@ -39,7 +39,16 @@
         "type": "enum",
         "name": "FlightClass",
         "symbols": ["ECONOMY", "BUSINESS", "FIRST"],
-        "doc": "The flight class (economy, business, first)."
+        "doc": "The flight class."
+      }
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "BookingStatus",
+        "symbols": ["BOOKED", "CHECKED_IN", "CANCELLED_BY_USER", "CANCELLED_BY_AIRLINE"],
+        "doc": "The user flight booking status."
       }
     },
     {
@@ -74,6 +83,18 @@
         "symbols": ["EMAIL", "SMS", "PUSH_NOTIFICATION"],
         "doc": "The user's preferred method of contact."
       }
+    },
+    {
+      "name": "departureAirportInfo",
+      "type": ["null", "AirportInfoI18n"],
+      "default": null,
+      "doc": "Information on the departure airport (i18n)."
+    },
+    {
+      "name": "arrivalAirportInfo",
+      "type": ["null", "AirportInfoI18n"],
+      "default": null,
+      "doc": "Information on the arrival airport (i18n)."
     }
   ]
 }

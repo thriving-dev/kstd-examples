@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "name": "Flight",
+  "name": "FlightEnriched",
   "namespace": "dev.thriving.poc.avro",
   "fields": [
     {
@@ -54,6 +54,18 @@
         ],
         "doc": "The category or type of flight."
       }
+    },
+    {
+      "name": "departureAirportInfo",
+      "type": ["null", "AirportInfoI18n"],
+      "default": null,
+      "doc": "Information on the departure airport (i18n)."
+    },
+    {
+      "name": "arrivalAirportInfo",
+      "type": ["null", "AirportInfoI18n"],
+      "default": null,
+      "doc": "Information on the arrival airport (i18n)."
     }
   ]
 }
