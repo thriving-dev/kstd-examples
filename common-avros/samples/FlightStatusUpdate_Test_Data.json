@@ -1,0 +1,32 @@
+[
+  {
+    "eventId": "d4f8c9fa-3d5f-43d4-b8ea-5f1d9ea3e2b9",
+    "flightNumber": "FL3456",
+    "departureDate": "2024-02-12",
+    "status": "DELAYED",
+    "newDepartureTime": "2024-02-12T16:45:00Z",
+    "newArrivalTime": "2024-02-12T20:00:00Z",
+    "delayMinutes": 45,
+    "remarks": "Technical issue causing delay."
+  },
+  {
+    "eventId": "d6f3b47c-5d6f-4a6c-b7a5-2e5d3f1ebf45",
+    "flightNumber": "FL9876",
+    "departureDate": "2024-03-15",
+    "status": "CANCELLED",
+    "newDepartureTime": null,
+    "newArrivalTime": null,
+    "delayMinutes": null,
+    "remarks": "Flight cancelled due to weather conditions."
+  },
+  {
+    "eventId": "c5f8e2ad-5d5f-42f4-a5a3-2d3f5c6bf7ed",
+    "flightNumber": "FL1234",
+    "departureDate": "2024-04-22",
+    "status": "ON_TIME",
+    "newDepartureTime": null,
+    "newArrivalTime": null,
+    "delayMinutes": null,
+    "remarks": "Flight is on schedule."
+  }
+]

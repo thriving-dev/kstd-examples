@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "FlightStatusUpdate",
-  "namespace": "dev.thriving.poc.avro",
+  "namespace": "dev.thriving.poc.airtravel.avro",
   "fields": [
     {
       "name": "eventId",
@@ -20,20 +20,20 @@
     },
     {
       "name": "status",
-      "type": "dev.thriving.poc.avro.FlightStatusEnum",
+      "type": "dev.thriving.poc.airtravel.avro.FlightStatusEnum",
       "doc": "The current status of the flight, referencing the FlightStatus enum."
     },
     {
       "name": "newDepartureTime",
       "type": ["null", "string"],
       "default": null,
-      "doc": "The updated departure time in ISO 8601 format if the departure time has changed (optional)."
+      "doc": "The updated departure date and time in ISO 8601 format if the departure date and time has changed (optional)."
     },
     {
       "name": "newArrivalTime",
       "type": ["null", "string"],
       "default": null,
-      "doc": "The updated arrival time in ISO 8601 format if the arrival time has changed (optional)."
+      "doc": "The updated arrival date and time in ISO 8601 format if the arrival date and time has changed (optional)."
     },
     {
       "name": "delayMinutes",

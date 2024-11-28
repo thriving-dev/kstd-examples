@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "FlightEnriched",
-  "namespace": "dev.thriving.poc.avro",
+  "namespace": "dev.thriving.poc.airtravel.avro",
   "fields": [
     {
       "name": "flightNumber",
@@ -31,12 +31,12 @@
     {
       "name": "departureTime",
       "type": "string",
-      "doc": "The scheduled departure time in ISO 8601 format."
+      "doc": "The scheduled departure date and time in ISO 8601 format."
     },
     {
       "name": "arrivalTime",
       "type": "string",
-      "doc": "The scheduled arrival time in ISO 8601 format."
+      "doc": "The scheduled arrival date and time in ISO 8601 format."
     },
     {
       "name": "flightCategory",

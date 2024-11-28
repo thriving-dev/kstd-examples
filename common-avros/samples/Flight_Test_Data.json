@@ -1,0 +1,202 @@
+[
+    {
+        "flightNumber": "FL9419",
+        "departureDate": "2024-04-27",
+        "airline": "Copenhagen Airways",
+        "departureAirport": "BLL",
+        "arrivalAirport": "CDG",
+        "departureTime": "02:31:00",
+        "arrivalTime": "05:52:00",
+        "flightCategory": "GOVERNMENT"
+    },
+    {
+        "flightNumber": "FL1916",
+        "departureDate": "2024-12-05",
+        "airline": "Air Denmark",
+        "departureAirport": "CPH",
+        "arrivalAirport": "LHR",
+        "departureTime": "00:11:00",
+        "arrivalTime": "23:00:00",
+        "flightCategory": "FREIGHT"
+    },
+    {
+        "flightNumber": "FL8072",
+        "departureDate": "2024-09-09",
+        "airline": "Viking Air",
+        "departureAirport": "CPH",
+        "arrivalAirport": "BKK",
+        "departureTime": "08:44:00",
+        "arrivalTime": "03:39:00",
+        "flightCategory": "GOVERNMENT"
+    },
+    {
+        "flightNumber": "FL1104",
+        "departureDate": "2024-07-15",
+        "airline": "Copenhagen Airways",
+        "departureAirport": "AAR",
+        "arrivalAirport": "DXB",
+        "departureTime": "03:38:00",
+        "arrivalTime": "02:06:00",
+        "flightCategory": "FREIGHT"
+    },
+    {
+        "flightNumber": "FL6782",
+        "departureDate": "2024-06-05",
+        "airline": "Nordic Jet",
+        "departureAirport": "ALC",
+        "arrivalAirport": "JFK",
+        "departureTime": "13:39:00",
+        "arrivalTime": "06:39:00",
+        "flightCategory": "PASSENGER"
+    },
+    {
+        "flightNumber": "FL3624",
+        "departureDate": "2024-08-26",
+        "airline": "Viking Air",
+        "departureAirport": "CPH",
+        "arrivalAirport": "BKK",
+        "departureTime": "04:51:00",
+        "arrivalTime": "16:45:00",
+        "flightCategory": "PASSENGER"
+    },
+    {
+        "flightNumber": "FL7539",
+        "departureDate": "2024-06-30",
+        "airline": "Viking Air",
+        "departureAirport": "AAR",
+        "arrivalAirport": "JFK",
+        "departureTime": "18:31:00",
+        "arrivalTime": "11:53:00",
+        "flightCategory": "OTHER"
+    },
+    {
+        "flightNumber": "FL2495",
+        "departureDate": "2024-08-10",
+        "airline": "Nordic Jet",
+        "departureAirport": "AAR",
+        "arrivalAirport": "JFK",
+        "departureTime": "19:24:00",
+        "arrivalTime": "01:05:00",
+        "flightCategory": "PRIVATE_JET"
+    },
+    {
+        "flightNumber": "FL9870",
+        "departureDate": "2024-09-23",
+        "airline": "Nordic Jet",
+        "departureAirport": "CPH",
+        "arrivalAirport": "LHR",
+        "departureTime": "01:47:00",
+        "arrivalTime": "21:04:00",
+        "flightCategory": "OTHER"
+    },
+    {
+        "flightNumber": "FL4009",
+        "departureDate": "2024-10-29",
+        "airline": "Nordic Jet",
+        "departureAirport": "STN",
+        "arrivalAirport": "CDG",
+        "departureTime": "15:24:00",
+        "arrivalTime": "03:32:00",
+        "flightCategory": "GOVERNMENT"
+    },
+    {
+        "flightNumber": "FL3980",
+        "departureDate": "2024-03-02",
+        "airline": "Copenhagen Airways",
+        "departureAirport": "AAR",
+        "arrivalAirport": "JFK",
+        "departureTime": "00:50:00",
+        "arrivalTime": "22:59:00",
+        "flightCategory": "MILITARY"
+    },
+    {
+        "flightNumber": "FL4025",
+        "departureDate": "2024-11-01",
+        "airline": "Nordic Jet",
+        "departureAirport": "ALC",
+        "arrivalAirport": "BKK",
+        "departureTime": "10:35:00",
+        "arrivalTime": "07:08:00",
+        "flightCategory": "GOVERNMENT"
+    },
+    {
+        "flightNumber": "FL8822",
+        "departureDate": "2024-07-01",
+        "airline": "Copenhagen Airways",
+        "departureAirport": "BLL",
+        "arrivalAirport": "LHR",
+        "departureTime": "04:00:00",
+        "arrivalTime": "09:00:00",
+        "flightCategory": "FREIGHT"
+    },
+    {
+        "flightNumber": "FL5853",
+        "departureDate": "2024-12-08",
+        "airline": "Viking Air",
+        "departureAirport": "CPH",
+        "arrivalAirport": "BKK",
+        "departureTime": "18:15:00",
+        "arrivalTime": "04:11:00",
+        "flightCategory": "PASSENGER"
+    },
+    {
+        "flightNumber": "FL5487",
+        "departureDate": "2024-07-17",
+        "airline": "Nordic Jet",
+        "departureAirport": "CPH",
+        "arrivalAirport": "JFK",
+        "departureTime": "07:10:00",
+        "arrivalTime": "13:12:00",
+        "flightCategory": "PRIVATE_JET"
+    },
+    {
+        "flightNumber": "FL1570",
+        "departureDate": "2024-08-13",
+        "airline": "Air Denmark",
+        "departureAirport": "AAR",
+        "arrivalAirport": "DXB",
+        "departureTime": "23:20:00",
+        "arrivalTime": "06:28:00",
+        "flightCategory": "OTHER"
+    },
+    {
+        "flightNumber": "FL6661",
+        "departureDate": "2024-05-13",
+        "airline": "Nordic Jet",
+        "departureAirport": "STN",
+        "arrivalAirport": "LHR",
+        "departureTime": "15:26:00",
+        "arrivalTime": "15:27:00",
+        "flightCategory": "EMERGENCY"
+    },
+    {
+        "flightNumber": "FL9099",
+        "departureDate": "2024-07-26",
+        "airline": "Copenhagen Airways",
+        "departureAirport": "STN",
+        "arrivalAirport": "CDG",
+        "departureTime": "22:57:00",
+        "arrivalTime": "13:01:00",
+        "flightCategory": "GOVERNMENT"
+    },
+    {
+        "flightNumber": "FL7120",
+        "departureDate": "2024-10-09",
+        "airline": "Viking Air",
+        "departureAirport": "AAR",
+        "arrivalAirport": "BKK",
+        "departureTime": "02:14:00",
+        "arrivalTime": "11:26:00",
+        "flightCategory": "EMERGENCY"
+    },
+    {
+        "flightNumber": "FL6127",
+        "departureDate": "2024-05-08",
+        "airline": "Air Denmark",
+        "departureAirport": "CPH",
+        "arrivalAirport": "DXB",
+        "departureTime": "07:03:00",
+        "arrivalTime": "12:32:00",
+        "flightCategory": "FREIGHT"
+    }
+]

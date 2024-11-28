@@ -1,0 +1,28 @@
+[
+  {
+    "namespace": "dev.thriving.poc.kms.avro",
+    "type": "record",
+    "name": "SongKey",
+    "fields": [
+      {"name": "song_id", "type": "long"}
+    ]
+  },
+  {
+    "namespace": "dev.thriving.poc.kms.avro",
+    "type": "record",
+    "name": "CountrySongKey",
+    "fields": [
+      {"name": "country", "type": "string"},
+      {"name": "song_id", "type": "long"}
+    ]
+  },
+  {
+    "namespace": "dev.thriving.poc.kms.avro",
+    "type": "record",
+    "name": "GenreKey",
+    "fields": [
+      {"name": "genre", "type": "string"},
+      {"name": "song_id", "type": "long"}
+    ]
+  }
+]

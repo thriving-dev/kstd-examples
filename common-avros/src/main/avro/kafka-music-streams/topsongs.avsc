@@ -1,0 +1,25 @@
+[
+  {
+    "namespace": "dev.thriving.poc.kms.avro",
+    "type": "record",
+    "name": "TopSong",
+    "fields": [
+      {"name": "song",      "type": "Song"},
+      {"name": "plays",         "type": "long"}
+    ]
+  },
+  {
+    "namespace": "dev.thriving.poc.kms.avro",
+    "type": "record",
+    "name": "Top5Songs",
+    "fields": [
+      {
+        "name": "top_songs",
+        "type":{
+          "type": "array",
+          "items": "TopSong"
+        }
+      }
+    ]
+  }
+]

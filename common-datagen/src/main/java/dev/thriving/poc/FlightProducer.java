@@ -1,8 +1,8 @@
 package dev.thriving.poc;
 
-import dev.thriving.poc.avro.Flight;
-import dev.thriving.poc.avro.FlightCategory;
-import dev.thriving.poc.avro.FlightKey;
+import dev.thriving.poc.airtravel.avro.Flight;
+import dev.thriving.poc.airtravel.avro.FlightCategory;
+import dev.thriving.poc.airtravel.avro.FlightKey;
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.kafka.clients.producer.KafkaProducer;

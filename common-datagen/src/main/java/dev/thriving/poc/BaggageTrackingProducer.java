@@ -2,8 +2,8 @@ package dev.thriving.poc;
 
 import com.fasterxml.uuid.Generators;
 import com.fasterxml.uuid.impl.TimeBasedEpochGenerator;
-import dev.thriving.poc.avro.BaggageStatus;
-import dev.thriving.poc.avro.BaggageTracking;
+import dev.thriving.poc.airtravel.avro.BaggageStatus;
+import dev.thriving.poc.airtravel.avro.BaggageTracking;
 import dev.thriving.poc.utils.AdjustableUUIDClock;
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;

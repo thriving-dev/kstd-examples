@@ -1,0 +1,110 @@
+[
+    {
+        "airportCode": "JFK",
+        "nameEnglish": "John F. Kennedy International Airport",
+        "cityEnglish": "New York",
+        "countryEnglish": "United States",
+        "translations": [
+            {
+                "languageCode": "en",
+                "name": "John F. Kennedy International Airport",
+                "city": "New York",
+                "country": "United States"
+            }
+        ]
+    },
+    {
+        "airportCode": "LHR",
+        "nameEnglish": "London Heathrow Airport",
+        "cityEnglish": "London",
+        "countryEnglish": "United Kingdom",
+        "translations": [
+            {
+                "languageCode": "en",
+                "name": "London Heathrow Airport",
+                "city": "London",
+                "country": "United Kingdom"
+            }
+        ]
+    },
+    {
+        "airportCode": "CPH",
+        "nameEnglish": "Copenhagen Kastrup Airport",
+        "cityEnglish": "Copenhagen",
+        "countryEnglish": "Denmark",
+        "translations": [
+            {
+                "languageCode": "en",
+                "name": "Copenhagen Kastrup Airport",
+                "city": "Copenhagen",
+                "country": "Denmark"
+            },
+            {
+                "languageCode": "da",
+                "name": "Københavns Lufthavn Kastrup",
+                "city": "København",
+                "country": "Danmark"
+            }
+        ]
+    },
+    {
+        "airportCode": "DXB",
+        "nameEnglish": "Dubai International Airport",
+        "cityEnglish": "Dubai",
+        "countryEnglish": "United Arab Emirates",
+        "translations": [
+            {
+                "languageCode": "en",
+                "name": "Dubai International Airport",
+                "city": "Dubai",
+                "country": "United Arab Emirates"
+            },
+            {
+                "languageCode": "ar",
+                "name": "Dubai International Airport (ar)",
+                "city": "Dubai (ar)",
+                "country": "United Arab Emirates (ar)"
+            }
+        ]
+    },
+    {
+        "airportCode": "CDG",
+        "nameEnglish": "Charles de Gaulle Airport",
+        "cityEnglish": "Paris",
+        "countryEnglish": "France",
+        "translations": [
+            {
+                "languageCode": "en",
+                "name": "Charles de Gaulle Airport",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "languageCode": "fr",
+                "name": "Charles de Gaulle Airport (fr)",
+                "city": "Paris (fr)",
+                "country": "France (fr)"
+            }
+        ]
+    },
+    {
+        "airportCode": "NRT",
+        "nameEnglish": "Narita International Airport",
+        "cityEnglish": "Tokyo",
+        "countryEnglish": "Japan",
+        "translations": [
+            {
+                "languageCode": "en",
+                "name": "Narita International Airport",
+                "city": "Tokyo",
+                "country": "Japan"
+            },
+            {
+                "languageCode": "ja",
+                "name": "Narita International Airport (ja)",
+                "city": "Tokyo (ja)",
+                "country": "Japan (ja)"
+            }
+        ]
+    }
+]

@@ -1,0 +1,202 @@
+[
+    {
+        "flightNumber": "FL2835",
+        "departureDate": "2024-12-20",
+        "airline": "Air Denmark",
+        "departureAirport": "ALC",
+        "arrivalAirport": "JFK",
+        "departureTime": "2024-12-20T10:57:40Z",
+        "arrivalTime": "2024-12-20T21:57:40Z",
+        "flightCategory": "PASSENGER"
+    },
+    {
+        "flightNumber": "FL8504",
+        "departureDate": "2024-12-29",
+        "airline": "Copenhagen Airways",
+        "departureAirport": "ALC",
+        "arrivalAirport": "DXB",
+        "departureTime": "2024-12-29T09:02:00Z",
+        "arrivalTime": "2024-12-29T18:02:00Z",
+        "flightCategory": "MILITARY"
+    },
+    {
+        "flightNumber": "FL2473",
+        "departureDate": "2024-08-26",
+        "airline": "Copenhagen Airways",
+        "departureAirport": "ALC",
+        "arrivalAirport": "LHR",
+        "departureTime": "2024-08-26T03:58:01Z",
+        "arrivalTime": "2024-08-26T06:58:01Z",
+        "flightCategory": "PRIVATE_JET"
+    },
+    {
+        "flightNumber": "FL2414",
+        "departureDate": "2024-01-06",
+        "airline": "Viking Air",
+        "departureAirport": "AAR",
+        "arrivalAirport": "JFK",
+        "departureTime": "2024-01-06T02:27:39Z",
+        "arrivalTime": "2024-01-06T09:27:39Z",
+        "flightCategory": "EMERGENCY"
+    },
+    {
+        "flightNumber": "FL1673",
+        "departureDate": "2024-02-21",
+        "airline": "Viking Air",
+        "departureAirport": "AAR",
+        "arrivalAirport": "CDG",
+        "departureTime": "2024-02-21T00:48:10Z",
+        "arrivalTime": "2024-02-21T01:48:10Z",
+        "flightCategory": "EMERGENCY"
+    },
+    {
+        "flightNumber": "FL1845",
+        "departureDate": "2024-03-13",
+        "airline": "Air Denmark",
+        "departureAirport": "STN",
+        "arrivalAirport": "CDG",
+        "departureTime": "2024-03-13T08:43:58Z",
+        "arrivalTime": "2024-03-13T12:43:58Z",
+        "flightCategory": "PASSENGER"
+    },
+    {
+        "flightNumber": "FL8135",
+        "departureDate": "2024-06-08",
+        "airline": "Viking Air",
+        "departureAirport": "STN",
+        "arrivalAirport": "BKK",
+        "departureTime": "2024-06-08T22:12:04Z",
+        "arrivalTime": "2024-06-09T05:12:04Z",
+        "flightCategory": "PASSENGER"
+    },
+    {
+        "flightNumber": "FL5206",
+        "departureDate": "2024-02-25",
+        "airline": "Viking Air",
+        "departureAirport": "ALC",
+        "arrivalAirport": "JFK",
+        "departureTime": "2024-02-25T12:05:54Z",
+        "arrivalTime": "2024-02-25T23:05:54Z",
+        "flightCategory": "FREIGHT"
+    },
+    {
+        "flightNumber": "FL3054",
+        "departureDate": "2024-01-02",
+        "airline": "Viking Air",
+        "departureAirport": "CPH",
+        "arrivalAirport": "JFK",
+        "departureTime": "2024-01-02T13:48:01Z",
+        "arrivalTime": "2024-01-03T00:48:01Z",
+        "flightCategory": "PASSENGER"
+    },
+    {
+        "flightNumber": "FL2799",
+        "departureDate": "2024-04-22",
+        "airline": "Air Denmark",
+        "departureAirport": "CPH",
+        "arrivalAirport": "CDG",
+        "departureTime": "2024-04-22T15:38:47Z",
+        "arrivalTime": "2024-04-22T18:38:47Z",
+        "flightCategory": "PRIVATE_JET"
+    },
+    {
+        "flightNumber": "FL2917",
+        "departureDate": "2024-05-24",
+        "airline": "Viking Air",
+        "departureAirport": "AAR",
+        "arrivalAirport": "JFK",
+        "departureTime": "2024-05-24T06:44:35Z",
+        "arrivalTime": "2024-05-24T12:44:35Z",
+        "flightCategory": "FREIGHT"
+    },
+    {
+        "flightNumber": "FL7019",
+        "departureDate": "2024-08-29",
+        "airline": "Air Denmark",
+        "departureAirport": "ALC",
+        "arrivalAirport": "DXB",
+        "departureTime": "2024-08-29T12:37:27Z",
+        "arrivalTime": "2024-08-29T18:37:27Z",
+        "flightCategory": "GOVERNMENT"
+    },
+    {
+        "flightNumber": "FL2245",
+        "departureDate": "2024-03-30",
+        "airline": "Viking Air",
+        "departureAirport": "ALC",
+        "arrivalAirport": "JFK",
+        "departureTime": "2024-03-30T02:45:57Z",
+        "arrivalTime": "2024-03-30T11:45:57Z",
+        "flightCategory": "MILITARY"
+    },
+    {
+        "flightNumber": "FL8325",
+        "departureDate": "2024-12-19",
+        "airline": "Nordic Jet",
+        "departureAirport": "STN",
+        "arrivalAirport": "BKK",
+        "departureTime": "2024-12-19T09:53:24Z",
+        "arrivalTime": "2024-12-19T21:53:24Z",
+        "flightCategory": "PRIVATE_JET"
+    },
+    {
+        "flightNumber": "FL9677",
+        "departureDate": "2024-06-28",
+        "airline": "Nordic Jet",
+        "departureAirport": "BLL",
+        "arrivalAirport": "LHR",
+        "departureTime": "2024-06-28T23:13:54Z",
+        "arrivalTime": "2024-06-29T01:13:54Z",
+        "flightCategory": "FREIGHT"
+    },
+    {
+        "flightNumber": "FL1565",
+        "departureDate": "2024-08-11",
+        "airline": "Viking Air",
+        "departureAirport": "ALC",
+        "arrivalAirport": "BKK",
+        "departureTime": "2024-08-11T10:42:59Z",
+        "arrivalTime": "2024-08-11T16:42:59Z",
+        "flightCategory": "PASSENGER"
+    },
+    {
+        "flightNumber": "FL5425",
+        "departureDate": "2024-08-16",
+        "airline": "Nordic Jet",
+        "departureAirport": "ALC",
+        "arrivalAirport": "DXB",
+        "departureTime": "2024-08-16T20:09:12Z",
+        "arrivalTime": "2024-08-17T02:09:12Z",
+        "flightCategory": "GOVERNMENT"
+    },
+    {
+        "flightNumber": "FL7800",
+        "departureDate": "2024-02-13",
+        "airline": "Viking Air",
+        "departureAirport": "AAR",
+        "arrivalAirport": "LHR",
+        "departureTime": "2024-02-13T09:26:36Z",
+        "arrivalTime": "2024-02-13T11:26:36Z",
+        "flightCategory": "PASSENGER"
+    },
+    {
+        "flightNumber": "FL4467",
+        "departureDate": "2024-02-22",
+        "airline": "Copenhagen Airways",
+        "departureAirport": "AAR",
+        "arrivalAirport": "DXB",
+        "departureTime": "2024-02-22T04:39:02Z",
+        "arrivalTime": "2024-02-22T11:39:02Z",
+        "flightCategory": "FREIGHT"
+    },
+    {
+        "flightNumber": "FL3173",
+        "departureDate": "2024-03-30",
+        "airline": "Copenhagen Airways",
+        "departureAirport": "AAR",
+        "arrivalAirport": "CDG",
+        "departureTime": "2024-03-30T09:09:42Z",
+        "arrivalTime": "2024-03-30T12:09:42Z",
+        "flightCategory": "PASSENGER"
+    }
+]

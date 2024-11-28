@@ -1,0 +1,32 @@
+[
+  {
+    "bookingId": "d6f8c85e-3d7b-4b38-a4ef-4e5375d6fb3e",
+    "userId": "48f8c97a-5d5f-4a7e-901f-3a248c64b76d",
+    "flightNumber": "FL1234",
+    "departureDate": "2024-02-12",
+    "seatNumber": "14B",
+    "reservationCode": "ABC123",
+    "flightClass": "ECONOMY",
+    "status": "BOOKED",
+    "email": "user42@example.com",
+    "phoneNumber": "+12345678942",
+    "deviceID": "a9f3c64b-5d5f-4e7e-a4ef-4f5375d2fc3e",
+    "preferredLanguage": "en",
+    "contactPreference": "EMAIL"
+  },
+  {
+    "bookingId": "d6f8c45e-3d7b-4b38-a4ef-4e5375d6fb3e",
+    "userId": "48f8c97a-5d5f-4a7e-901f-3a248c64b76e",
+    "flightNumber": "FL5678",
+    "departureDate": "2024-06-18",
+    "seatNumber": "21C",
+    "reservationCode": "DEF456",
+    "flightClass": "BUSINESS",
+    "status": "CHECKED_IN",
+    "email": "user50@example.com",
+    "phoneNumber": "+12345678950",
+    "deviceID": "b2f4c64a-5d5f-4e7f-a4ef-4f5375d2fc3a",
+    "preferredLanguage": "fr",
+    "contactPreference": "SMS"
+  }
+]

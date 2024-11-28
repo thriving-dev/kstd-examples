@@ -1,7 +1,7 @@
 {
   "type": "enum",
   "name": "FlightStatusEnum",
-  "namespace": "dev.thriving.poc.avro",
+  "namespace": "dev.thriving.poc.airtravel.avro",
   "symbols": [
     "ON_TIME",
     "DELAYED",

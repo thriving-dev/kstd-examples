@@ -1,0 +1,181 @@
+[
+  {
+    "type": "record",
+    "name": "NotificationUserDetails",
+    "namespace": "dev.thriving.poc.airtravel.avro",
+    "fields": [
+      {
+        "name": "userId",
+        "type": "string",
+        "doc": "A unique identifier for the user."
+      },
+      {
+        "name": "notificationId",
+        "type": "string",
+        "doc": "A unique identifier for the notification (UUID v7)."
+      },
+      {
+        "name": "email",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "The traveler's email address (optional)."
+      },
+      {
+        "name": "phoneNumber",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "The traveler's phone number (optional)."
+      },
+      {
+        "name": "deviceID",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "The device ID for the flight tracker app (optional)."
+      },
+      {
+        "name": "preferredLanguage",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "The user's preferred language for notifications, using ISO 639-1 codes (optional)."
+      },
+      {
+        "name": "contactPreference",
+        "type": {
+          "type": "enum",
+          "name": "ContactPreference",
+          "symbols": [
+            "EMAIL",
+            "SMS",
+            "PUSH_NOTIFICATION"
+          ],
+          "doc": "The user's preferred method of contact."
+        }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "NotificationFlightDetails",
+    "namespace": "dev.thriving.poc.airtravel.avro",
+    "fields": [
+      {
+        "name": "flightNumber",
+        "type": "string",
+        "doc": "The flight number of the booked flight."
+      },
+      {
+        "name": "departureDate",
+        "type": "string",
+        "doc": "The date of departure in ISO 8601 format (YYYY-MM-DD)."
+      },
+      {
+        "name": "flightClass",
+        "type": {
+          "type": "enum",
+          "name": "FlightClass",
+          "symbols": [
+            "ECONOMY",
+            "BUSINESS",
+            "FIRST"
+          ],
+          "doc": "The flight class."
+        }
+      },
+      {
+        "name": "flightStatus",
+        "type": "dev.thriving.poc.airtravel.avro.FlightStatusEnum",
+        "doc": "The current status of the flight, referencing the FlightStatus enum."
+      },
+      {
+        "name": "newDepartureTime",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "The updated departure date and time in ISO 8601 format if the departure date and time has changed (optional)."
+      },
+      {
+        "name": "newArrivalTime",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "The updated arrival date and time in ISO 8601 format if the arrival date and time has changed (optional)."
+      },
+      {
+        "name": "delayMinutes",
+        "type": [
+          "null",
+          "int"
+        ],
+        "default": null,
+        "doc": "The number of minutes the flight is delayed (optional)."
+      },
+      {
+        "name": "departureAirport",
+        "type": "AirportInfoI18n",
+        "doc": "Details of the departure airport in English and the user's preferred language."
+      },
+      {
+        "name": "arrivalAirportName",
+        "type": "AirportInfoI18n",
+        "doc": "Details of the arrival airport in English and the user's preferred language."
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "UserFlightBookingNotification",
+    "namespace": "dev.thriving.poc.airtravel.avro",
+    "fields": [
+      {
+        "name": "notificationId",
+        "type": "string",
+        "doc": "A unique identifier for the notification (UUID v7)."
+      },
+      {
+        "name": "userDetails",
+        "type": "NotificationUserDetails",
+        "doc": "The user information for the flight booking."
+      },
+      {
+        "name": "flightDetails",
+        "type": "NotificationFlightDetails",
+        "doc": "The flight details for the flight booking."
+      },
+      {
+        "name": "seatNumber",
+        "type": "string",
+        "doc": "The seat number assigned to the traveler."
+      },
+      {
+        "name": "reservationCode",
+        "type": "string",
+        "doc": "The reservation code (PNR) associated with the booking."
+      },
+      {
+        "name": "remarks",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null,
+        "doc": "Any additional remarks or information about the flight status (optional)."
+      }
+    ]
+  }
+]

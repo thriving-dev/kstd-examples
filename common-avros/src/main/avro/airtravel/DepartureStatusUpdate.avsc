@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "DepartureStatusUpdate",
-  "namespace": "dev.thriving.poc.avro",
+  "namespace": "dev.thriving.poc.airtravel.avro",
   "fields": [
     {
       "name": "flightNumber",
@@ -44,7 +44,7 @@
       "name": "newDepartureTime",
       "type": ["null", "string"],
       "default": null,
-      "doc": "The updated departure time in ISO 8601 format if the departure time has changed (optional)."
+      "doc": "The updated departure date and time in ISO 8601 format if the departure date and time has changed (optional)."
     }
   ]
 }

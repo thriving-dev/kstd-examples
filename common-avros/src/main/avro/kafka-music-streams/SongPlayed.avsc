@@ -1,0 +1,12 @@
+{
+  "namespace": "dev.thriving.poc.kms.avro",
+  "type": "record",
+  "name": "SongPlayed",
+  "fields": [
+    {"name": "play_id",         "type": "string"},
+    {"name": "song_id",         "type": "long"},
+    {"name": "user_id",         "type": "long"},
+    {"name": "play_duration_s", "type": "long"},
+    {"name": "played_at",       "type": "string"}
+  ]
+}

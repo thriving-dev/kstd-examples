@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "BaggageTracking",
-  "namespace": "dev.thriving.poc.avro",
+  "namespace": "dev.thriving.poc.airtravel.avro",
   "fields": [
     {
       "name": "trackingId",

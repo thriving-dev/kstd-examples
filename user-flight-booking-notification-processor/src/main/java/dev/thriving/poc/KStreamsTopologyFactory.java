@@ -1,6 +1,6 @@
 package dev.thriving.poc;
 
-import dev.thriving.poc.avro.*;
+import dev.thriving.poc.airtravel.avro.*;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
 import io.micronaut.configuration.kafka.streams.ConfiguredStreamBuilder;
 import io.micronaut.context.annotation.Factory;
@@ -8,9 +8,7 @@ import jakarta.inject.Singleton;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.kstream.*;
-import org.apache.kafka.streams.processor.api.ContextualProcessor;
 import org.apache.kafka.streams.processor.api.ProcessorSupplier;
-import org.apache.kafka.streams.processor.api.Record;
 import org.apache.kafka.streams.state.Stores;
 
 import java.util.Collections;
@@ -63,21 +61,21 @@ public class KStreamsTopologyFactory {
 
         // topology
         KStream<String, Flight> passengerFlightsRepartitioned = flights
-                .filter((k, v) -> true, Named.as("passenger-flight-filter"))
+                .filter(new PassengerFlightFilter(), Named.as("passenger-flight-filter"))
                 .repartition(Repartitioned.<String, Flight>as("passenger-flights-repartitioned").withNumberOfPartitions(12));
 
         KTable<String, FlightEnriched> flightsEnriched = passengerFlightsRepartitioned
-                .process(supplier4(), Named.as("airport-enrichment-processor"))
+                .process(AirportEnrichmentProcessor::new, Named.as("airport-enrichment-processor"))
                 .toTable(Named.as("flights-enriched-table"));
 
         KStream<String, UserFlightBookingEnriched> bookingsEnriched = bookings
                 .selectKey((k, v) -> v.getDepartureDate() + "_" + v.getFlightNumber())
-                .join(flightsEnriched, (k, v1, v2) -> UserFlightBookingEnriched.newBuilder().build(), Joined.as("bookings-to-flights-join"));
+                .join(flightsEnriched, new BookingToFlightKVJoiner(), Joined.as("bookings-to-flights-join"));
 
         KStream<String, UserFlightBookingNotification> notifications = bookingsEnriched
-                .process(supplier3(), Named.as("flight-booking-processor"), STATE_STORE_FLIGHT_BOOKINGS)
+                .process(FlightBoookingProcessor::new, Named.as("flight-booking-processor"), STATE_STORE_FLIGHT_BOOKINGS)
                 .merge(flightStatusUpdates
-                        .process(supplier(), Named.as("booking-notification-processor"), STATE_STORE_FLIGHT_BOOKINGS));
+                        .process(BookingNotificationProcessor::new, Named.as("booking-notification-processor"), STATE_STORE_FLIGHT_BOOKINGS));
 
         // sink
         notifications.to(SINK_TOPIC_USER_FLIGHT_BOOKING_NOTIFICATION, Produced.as("user-notification-sink"));
@@ -86,44 +84,5 @@ public class KStreamsTopologyFactory {
         return notifications;
     }
 
-    private static ValueJoinerWithKey<String, UserFlightBooking, FlightEnriched, UserFlightBookingEnriched> joiner1() {
-        return (k, v1, v2) -> UserFlightBookingEnriched.newBuilder().build();
-    }
-
-    private ProcessorSupplier<String, Flight, String, FlightEnriched> supplier4() {
-        return () -> new ContextualProcessor<>() {
-            @Override
-            public void process(Record<String, Flight> record) {
-                System.out.println("supplier");
-            }
-        };
-    }
-
-    private ProcessorSupplier<? super String, ? super FlightStatusUpdate, String, UserFlightBookingNotification> supplier() {
-        return () -> new ContextualProcessor<>() {
-            @Override
-            public void process(Record<String, FlightStatusUpdate> record) {
-                System.out.println("supplier");
-            }
-        };
-    }
-
-    private ProcessorSupplier<? super String, ? super UserFlightBooking, String, UserFlightBookingEnriched> supplier2() {
-        return () -> new ContextualProcessor<>() {
-            @Override
-            public void process(Record<String, UserFlightBooking> record) {
-                System.out.println("supplier2");
-            }
-        };
-    }
-
-    private ProcessorSupplier<String, UserFlightBookingEnriched, String, UserFlightBookingNotification> supplier3() {
-        return () -> new ContextualProcessor<>() {
-            @Override
-            public void process(Record<String, UserFlightBookingEnriched> record) {
-                System.out.println("supplier3");
-            }
-        };
-    }
 
 }

@@ -1,0 +1,10 @@
+{
+  "namespace": "dev.thriving.poc.kms.avro",
+  "type": "record",
+  "name": "Listener",
+  "fields": [
+    {"name": "user_id",      "type": "long"},
+    {"name": "name",         "type": "string"},
+    {"name": "country_code", "type": "string", "doc": "The user's (alpha-3) country code."}
+  ]
+}
