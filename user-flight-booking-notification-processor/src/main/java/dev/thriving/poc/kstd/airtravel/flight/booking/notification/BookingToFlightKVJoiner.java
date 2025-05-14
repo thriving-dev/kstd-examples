@@ -1,4 +1,4 @@
-package dev.thriving.poc;
+package dev.thriving.poc.kstd.airtravel.flight.booking.notification;
 
 import dev.thriving.poc.airtravel.avro.FlightEnriched;
 import dev.thriving.poc.airtravel.avro.UserFlightBooking;

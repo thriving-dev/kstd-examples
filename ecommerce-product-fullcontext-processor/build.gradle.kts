@@ -30,7 +30,7 @@ dependencies {
 }
 
 application {
-    mainClass = "dev.thriving.poc.kstd.airtravel.flight.booking.notification.Application"
+    mainClass = "dev.thriving.poc.kstd.ecommerce.product.fullcontext.Application"
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("21")

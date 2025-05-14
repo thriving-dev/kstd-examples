@@ -11,4 +11,3 @@ allprojects {
         maven("https://packages.confluent.io/maven/")
     }
 }
-

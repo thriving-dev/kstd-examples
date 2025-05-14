@@ -1,4 +1,4 @@
-package dev.thriving.poc;
+package dev.thriving.poc.kstd.airtravel;
 
 import dev.thriving.poc.airtravel.avro.Flight;
 import dev.thriving.poc.airtravel.avro.FlightCategory;

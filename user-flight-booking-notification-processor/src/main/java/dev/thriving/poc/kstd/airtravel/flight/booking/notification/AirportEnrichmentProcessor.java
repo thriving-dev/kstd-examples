@@ -1,4 +1,4 @@
-package dev.thriving.poc;
+package dev.thriving.poc.kstd.airtravel.flight.booking.notification;
 
 import dev.thriving.poc.airtravel.avro.AirportInfoI18n;
 import dev.thriving.poc.airtravel.avro.Flight;
@@ -20,6 +20,7 @@ public class AirportEnrichmentProcessor extends ContextualProcessor<String, Flig
 
     @Override
     public void process(Record<String, Flight> record) {
-
+        String arrivalAirportCode = record.value().getArrivalAirport();
+        AirportInfoI18n airportInfoI18n = airportInfoStore.get(arrivalAirportCode);
     }
 }

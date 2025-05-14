@@ -1,5 +1,6 @@
-package dev.thriving.poc;
+package dev.thriving.poc.kstd.airtravel.flight.booking.notification;
 
+import dev.thriving.poc.airtravel.avro.FlightStatusUpdate;
 import dev.thriving.poc.airtravel.avro.UserFlightBookingEnriched;
 import dev.thriving.poc.airtravel.avro.UserFlightBookingNotification;
 import org.apache.kafka.streams.processor.api.ContextualProcessor;
@@ -7,7 +8,7 @@ import org.apache.kafka.streams.processor.api.ProcessorContext;
 import org.apache.kafka.streams.processor.api.Record;
 import org.apache.kafka.streams.state.KeyValueStore;
 
-public class FlightBoookingProcessor extends ContextualProcessor<String, UserFlightBookingEnriched, String, UserFlightBookingNotification> {
+public class BookingNotificationProcessor extends ContextualProcessor<String, FlightStatusUpdate, String, UserFlightBookingNotification> {
 
     private KeyValueStore<String, UserFlightBookingEnriched> flightBookingsStore;
 
@@ -18,7 +19,7 @@ public class FlightBoookingProcessor extends ContextualProcessor<String, UserFli
     }
 
     @Override
-    public void process(Record<String, UserFlightBookingEnriched> record) {
+    public void process(Record<String, FlightStatusUpdate> record) {
 
     }
 }

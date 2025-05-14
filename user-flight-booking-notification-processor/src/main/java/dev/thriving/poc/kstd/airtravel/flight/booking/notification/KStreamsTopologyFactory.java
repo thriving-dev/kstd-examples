@@ -1,4 +1,4 @@
-package dev.thriving.poc;
+package dev.thriving.poc.kstd.airtravel.flight.booking.notification;
 
 import dev.thriving.poc.airtravel.avro.*;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
@@ -8,7 +8,6 @@ import jakarta.inject.Singleton;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.kstream.*;
-import org.apache.kafka.streams.processor.api.ProcessorSupplier;
 import org.apache.kafka.streams.state.Stores;
 
 import java.util.Collections;

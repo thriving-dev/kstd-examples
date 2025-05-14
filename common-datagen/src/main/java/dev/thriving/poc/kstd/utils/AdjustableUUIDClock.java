@@ -1,4 +1,4 @@
-package dev.thriving.poc.utils;
+package dev.thriving.poc.kstd.utils;
 
 import com.fasterxml.uuid.UUIDClock;
 

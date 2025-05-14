@@ -1,5 +1,5 @@
 applicationType: default
-defaultPackage: dev.thriving.poc.kstd.airtravel.flight.booking.notification
+defaultPackage: dev.thriving.poc.kstd.ecommerce.product.fullcontext
 testFramework: junit
 sourceLanguage: java
 buildTool: gradle_kotlin

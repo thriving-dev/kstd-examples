@@ -1,11 +1,11 @@
-package dev.thriving.poc;
+package dev.thriving.poc.kstd.airtravel;
 
 import com.fasterxml.uuid.Generators;
 import com.fasterxml.uuid.impl.TimeBasedEpochGenerator;
 import dev.thriving.poc.airtravel.avro.ContactPreference;
 import dev.thriving.poc.airtravel.avro.FlightClass;
 import dev.thriving.poc.airtravel.avro.UserFlightBooking;
-import dev.thriving.poc.utils.AdjustableUUIDClock;
+import dev.thriving.poc.kstd.utils.AdjustableUUIDClock;
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.kafka.clients.producer.KafkaProducer;
